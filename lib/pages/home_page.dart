@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:budget_tracker/widgets/transaction_class.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: CircularPercentIndicator(
-                radius: screenSize.width / 2,
+                radius: screenSize.width / 2.5,
                 lineWidth: 10,
                 percent: 0.5,
                 backgroundColor: Colors.white,
@@ -42,6 +43,26 @@ class HomePage extends StatelessWidget {
                 ),
                 progressColor: Theme.of(context).colorScheme.primary,
               ),
+            ),
+            const SizedBox(
+              height: 35,
+            ),
+            const Text(
+              'Items',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const TransactionCard(
+              text: "Apple Watch",
+              amount: 105.99,
+              isExpense: true,
+            ),
+            const TransactionCard(
+              text: "Apple iphone",
+              amount: 800,
+              isExpense: false,
             ),
           ],
         ),
