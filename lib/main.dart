@@ -1,3 +1,4 @@
+import 'package:budget_tracker/pages/home_page.dart';
 import 'package:budget_tracker/screens/home.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.indigo, brightness: Brightness.dark),
         ),
-        home: Home());
+        home: HomePage());
   }
 }

@@ -1,13 +1,20 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:budget_tracker/models/transaction_item.dart';
 import 'package:budget_tracker/widgets/transaction_class.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List<TransactionItem> items = [];
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -19,7 +26,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Align(
-              alignment: Alignment.center,
+              alignment: Alignment.topCenter,
               child: CircularPercentIndicator(
                 radius: screenSize.width / 2.5,
                 lineWidth: 10,
@@ -55,15 +62,7 @@ class HomePage extends StatelessWidget {
               height: 10,
             ),
             const TransactionCard(
-              text: "Apple Watch",
-              amount: 105.99,
-              isExpense: true,
-            ),
-            const TransactionCard(
-              text: "Apple iphone",
-              amount: 800,
-              isExpense: false,
-            ),
+                text: "Apple Watch", amount: 105.99, isExpense: true)
           ],
         ),
       ),

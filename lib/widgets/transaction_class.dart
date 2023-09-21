@@ -1,14 +1,16 @@
+import 'package:budget_tracker/models/transaction_item.dart';
 import 'package:flutter/material.dart';
 
 class TransactionCard extends StatelessWidget {
   final String text;
   final double amount;
   final bool isExpense;
-  const TransactionCard(
-      {required this.amount,
-      required this.text,
-      required this.isExpense,
-      super.key});
+  const TransactionCard({
+    super.key,
+    required this.text,
+    required this.amount,
+    required this.isExpense,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,15 +34,15 @@ class TransactionCard extends StatelessWidget {
           children: [
             Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
               ),
             ),
             const Spacer(),
             Text(
               (!isExpense ? "+ " : "- ") + amount.toString(),
-              style: TextStyle(
-                fontSize: 15,
+              style: const TextStyle(
+                fontSize: 16,
               ),
             )
           ],
