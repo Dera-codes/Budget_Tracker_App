@@ -62,7 +62,15 @@ class _HomePageState extends State<HomePage> {
               height: 10,
             ),
             const TransactionCard(
-                text: "Apple Watch", amount: 105.99, isExpense: true)
+              text: "Apple Watch",
+              amount: 105.99,
+              isExpense: true,
+            ),
+            const TransactionCard(
+              text: "Apple iPhone",
+              amount: 800,
+              isExpense: false,
+            )
           ],
         ),
       ),
